@@ -6,13 +6,13 @@ import requests
 import sklearn
 import os
 import math
+import warnings
 
 
-class DustPredictor:
+class DustModel:
 
-    #TODO: Get model urls
     URL_QUALITY_MODEL = "https://dataverse.lib.virginia.edu/api/access/datafile/35742"
-    URL_RF_MODEL = ""
+    URL_RF_MODEL = "https://dataverse.lib.virginia.edu/api/access/datafile/35746"
 
     FILENAME_QUALITY_MODEL = "models/prediction-quality.model"
     FILENAME_RF_MODEL = "models/rf-model-large.joblib"
@@ -37,27 +37,31 @@ class DustPredictor:
                 self._download_file(self.URL_QUALITY_MODEL, self.FILENAME_QUALITY_MODEL)
                 self.quality_model.load_model(self.FILENAME_QUALITY_MODEL)
             except FileNotFoundError as e:
-                e.strerror = "The model file must exist in the current directory."
+                e.strerror = "The model file must exist in the model directory."
                 raise e
         # Try to load the random forest model from disk
         try:
             self.model = load(self.FILENAME_RF_MODEL)
-        except FileNotFoundError as e:
+        except:
             try:
                 self._download_file(self.URL_RF_MODEL, self.FILENAME_RF_MODEL)
                 self.model = load(self.FILENAME_RF_MODEL)
             except FileNotFoundError as e:
-                e.strerror = "The model file must exist in the current directory."
+                e.strerror = "The model file must exist in the model directory."
                 raise e
 
     def _download_file(self, url, name):
         """ Downloads a given file and writes to disk. Also displays a progress bar. From: https://stackoverflow.com/a/56796119"""
-        with requests.get(url, stream=True) as r:
-            r.raise_for_status()
-            with open(name, 'wb') as f:
-                for chunk in tqdm(r.iter_content(chunk_size= 8192), total=math.ceil(int(r.headers.get("content-length", 0))//8192)):
-                    if chunk:  # filter out keep-alive new chunks
-                        f.write(chunk)
+        # From https://towardsdatascience.com/how-to-download-files-using-python-part-2-19b95be4cdb5
+        r = requests.get(url, stream=True, allow_redirects=True)
+        total_size = int(r.headers.get('content-length'))
+        initial_pos = 0
+        with open(name,'wb') as f: 
+            with tqdm(total=total_size, unit='B', unit_scale=True,  desc=name,initial=initial_pos, ascii=True) as pbar:
+                for ch in r.iter_content(chunk_size=(1024 * 1024)): # 1MB chunk size                    
+                    if ch:
+                        f.write(ch) 
+                        pbar.update(len(ch))
 
     def predict(self, r, mstar, alpha, d2g, sigma, tgas, t, delta_t, input_bins):
         """
@@ -99,6 +103,5 @@ class DustPredictor:
         # Check the quality of the prediction
         prediction_quality = self.quality_model.predict(X_formatted)
         if prediction_quality == 0:
-            print("WARNING! For the given input paramters, the predictions are probably not accurate.")
-        
-        return prediction
+            warnings.warn("For the given input paramters, the resulting prediction is most likely not accurate.")
+        return prediction.flatten()
