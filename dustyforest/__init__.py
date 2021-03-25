@@ -1,1 +1,1 @@
-import dustyforest_ml
+from .dustyforest import DustModel

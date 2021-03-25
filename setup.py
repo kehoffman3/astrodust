@@ -3,7 +3,7 @@ See:
 https://packaging.python.org/guides/distributing-packages-using-setuptools/
 https://github.com/pypa/sampleproject
 """
-from setuptools import setup
+from setuptools import setup, find_packages
 import pathlib
 
 here = pathlib.Path(__file__).parent.resolve()
@@ -13,7 +13,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='dustyforest',
-    version='1.0.1',
+    version='1.0.8',
     description='A library for predicting the distribution of dust particles in protoplanetary disks',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -32,7 +32,7 @@ setup(
         'Programming Language :: Python :: 3 :: Only',
     ],
     keywords='astronomy,machine learning,planets,random forest',
-    package_dir={'': 'dustyforest'},
+    packages=find_packages(),
     python_requires='>=3.6, <4',
     install_requires=[
             'joblib>=1.0',
@@ -40,4 +40,5 @@ setup(
             'tqdm>=4.50',
             'scikit-learn>=0.24.0',
         ], 
+    options={"bdist_wheel": {"universal": True}}
 )

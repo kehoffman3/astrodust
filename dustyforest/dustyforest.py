@@ -58,7 +58,7 @@ class DustModel:
         initial_pos = 0
         with open(name,'wb') as f: 
             with tqdm(total=total_size, unit='B', unit_scale=True,  desc=name,initial=initial_pos, ascii=True) as pbar:
-                for ch in r.iter_content(chunk_size=(1024 * 1024)): # 1MB chunk size                    
+                for ch in r.iter_content(chunk_size=(1024 * 128)): # 128KB chunk size                    
                     if ch:
                         f.write(ch) 
                         pbar.update(len(ch))
