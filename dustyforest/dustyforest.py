@@ -44,7 +44,10 @@ class DustModel:
             self.model = load(self.FILENAME_RF_MODEL)
         except:
             try:
-                self._download_file(self.URL_RF_MODEL, self.FILENAME_RF_MODEL)
+                download_response = input("The random forest model file was not found in the model directory and must be downloaded (6.6GB). "\
+                "Are you sure you want to download it?\n(Y) for yes or any other key for no.")
+                if download_response.lower() == "y":
+                    self._download_file(self.URL_RF_MODEL, self.FILENAME_RF_MODEL)
                 self.model = load(self.FILENAME_RF_MODEL)
             except FileNotFoundError as e:
                 e.strerror = "The model file must exist in the model directory."
