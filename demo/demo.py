@@ -1,4 +1,4 @@
-import dustyforest
+import astrodust
 import pickle
 import os
 import sys
@@ -9,7 +9,7 @@ file = open(path, 'rb')
 params = pickle.load(file)
 
 # Create our model class. It will download the necessary pre-trained models
-model = dustyforest.DustModel()
+model = astrodust.DustModel()
 
 # Show the prediction
 print(model.predict(**params))

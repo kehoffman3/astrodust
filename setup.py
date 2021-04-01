@@ -12,12 +12,12 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
-    name='dustyforest',
-    version='1.0.8',
+    name='astrodust',
+    version='1.0.0',
     description='A library for predicting the distribution of dust particles in protoplanetary disks',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/kehoffman3/dustyforest',
+    url='https://github.com/kehoffman3/astrodust',
     author='UVA Astronomy Capstone Group',
     author_email='keh4nb@virginia.edu',
    classifiers=[  
