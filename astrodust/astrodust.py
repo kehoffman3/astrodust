@@ -11,8 +11,8 @@ import warnings
 
 class DustModel:
 
-    URL_QUALITY_MODEL = "https://dataverse.lib.virginia.edu/api/access/datafile/35742"
-    URL_RF_MODEL = "https://dataverse.lib.virginia.edu/api/access/datafile/35746"
+    URL_QUALITY_MODEL = "https://zenodo.org/record/4662910/files/prediction-quality.model?download=1"
+    URL_RF_MODEL = "https://zenodo.org/record/4662910/files/rf-model-large.joblib?download=1"
 
     FILENAME_QUALITY_MODEL = "models/prediction-quality.model"
     FILENAME_RF_MODEL = "models/rf-model-large.joblib"

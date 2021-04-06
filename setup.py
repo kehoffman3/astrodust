@@ -13,7 +13,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='astrodust',
-    version='1.0.0',
+    version='1.0.1',
     description='A library for predicting the distribution of dust particles in protoplanetary disks',
     long_description=long_description,
     long_description_content_type='text/markdown',
