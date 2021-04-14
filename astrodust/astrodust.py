@@ -90,10 +90,10 @@ class DustModel:
             tgas (float): temperature of the gas  
             t (int): absolute time in seconds  
             delta_t (int): time in seconds in the future to predict for  
-            input_bins (array length 171): 171 length array of dust densities  
+            input_bins (array): 171 length array of dust densities for each bin  
 
         Returns:  
-            array: 171 length array of the predicted dust densities  
+            array: 171 length array of the predicted dust densities for each bin  
         """
 
         # mstar is assumed to be 1

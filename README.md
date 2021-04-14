@@ -14,7 +14,7 @@ The package requires two pretrained models, a random forest regression model and
 
 ## Documentation
 
-The documentation for the package is located [here](https://kehoffman3.github.io/astrodust/docs/docs/astrodust.html). A demo notebook is also available here (**TODO**).
+The documentation for the package is located [here](https://kehoffman3.github.io/astrodust/docs/astrodust.html). A demo notebook is also available here (**TODO**).
 
 Particle sizes for each bin for the input and output can be viewed here (**TODO**).
 
