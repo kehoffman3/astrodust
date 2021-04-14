@@ -36,6 +36,12 @@ import os
 import math
 import warnings
 
+__pdoc__ = {}
+__pdoc__[&#34;DustModel.URL_QUALITY_MODEL&#34;] = False
+__pdoc__[&#34;DustModel.URL_RF_MODEL&#34;] = False
+__pdoc__[&#34;DustModel.FILENAME_QUALITY_MODEL&#34;] = False
+__pdoc__[&#34;DustModel.FILENAME_RF_MODEL&#34;] = False
+
 
 class DustModel:
     &#34;&#34;&#34;
@@ -50,8 +56,8 @@ class DustModel:
 
     
     def __init__(self):
-        &#34;&#34;&#34; Loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
-        If the models do not exist in the models directory, it will download them from Zenodo.
+        &#34;&#34;&#34; Init method loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
+        If the models do not exist in the `models` directory, it will prompt to download them from Zenodo.
         &#34;&#34;&#34;
         self.quality_model = xgb.XGBClassifier()
 
@@ -103,16 +109,18 @@ class DustModel:
         &#34;&#34;&#34;
         Makes a prediction from the given set of input parameters. It will also raise warning if the predicted quality is not good.
         
-        r (float): distance from central star
-        alpha (float): turblance
-        d2g (float): dust to gas ratio
-        sigma (float): the surface density of the gas in the model (in g/cm^2)
-        tgas (float): temperature of the gas
-        t (int): absolute time in seconds
-        delta_t (int): time in seconds in the future to predict for
-        input_bins (array length 171): 171 length array of dust densities
+        Args:  
+            r (float): distance from central star  
+            alpha (float): turblance  
+            d2g (float): dust to gas ratio  
+            sigma (float): the surface density of the gas in the model (in g/cm^2)  
+            tgas (float): temperature of the gas  
+            t (int): absolute time in seconds  
+            delta_t (int): time in seconds in the future to predict for  
+            input_bins (array length 171): 171 length array of dust densities  
 
-        Returns (array length 171): 171 length array of the predicted dust densities
+        Returns:  
+            array: 171 length array of the predicted dust densities  
         &#34;&#34;&#34;
 
         # mstar is assumed to be 1
@@ -158,8 +166,8 @@ class DustModel:
 </code></dt>
 <dd>
 <div class="desc"><p>Class for predicting dust densities</p>
-<p>Loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
-If the models do not exist in the models directory, it will download them from Zenodo.</p></div>
+<p>Init method loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
+If the models do not exist in the <code>models</code> directory, it will prompt to download them from Zenodo.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -177,8 +185,8 @@ If the models do not exist in the models directory, it will download them from Z
 
     
     def __init__(self):
-        &#34;&#34;&#34; Loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
-        If the models do not exist in the models directory, it will download them from Zenodo.
+        &#34;&#34;&#34; Init method loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
+        If the models do not exist in the `models` directory, it will prompt to download them from Zenodo.
         &#34;&#34;&#34;
         self.quality_model = xgb.XGBClassifier()
 
@@ -230,16 +238,18 @@ If the models do not exist in the models directory, it will download them from Z
         &#34;&#34;&#34;
         Makes a prediction from the given set of input parameters. It will also raise warning if the predicted quality is not good.
         
-        r (float): distance from central star
-        alpha (float): turblance
-        d2g (float): dust to gas ratio
-        sigma (float): the surface density of the gas in the model (in g/cm^2)
-        tgas (float): temperature of the gas
-        t (int): absolute time in seconds
-        delta_t (int): time in seconds in the future to predict for
-        input_bins (array length 171): 171 length array of dust densities
+        Args:  
+            r (float): distance from central star  
+            alpha (float): turblance  
+            d2g (float): dust to gas ratio  
+            sigma (float): the surface density of the gas in the model (in g/cm^2)  
+            tgas (float): temperature of the gas  
+            t (int): absolute time in seconds  
+            delta_t (int): time in seconds in the future to predict for  
+            input_bins (array length 171): 171 length array of dust densities  
 
-        Returns (array length 171): 171 length array of the predicted dust densities
+        Returns:  
+            array: 171 length array of the predicted dust densities  
         &#34;&#34;&#34;
 
         # mstar is assumed to be 1
@@ -270,25 +280,6 @@ If the models do not exist in the models directory, it will download them from Z
             warnings.warn(&#34;For the given input paramters, the resulting prediction is most likely not accurate.&#34;)
         return prediction.flatten()</code></pre>
 </details>
-<h3>Class variables</h3>
-<dl>
-<dt id="astrodust.DustModel.FILENAME_QUALITY_MODEL"><code class="name">var <span class="ident">FILENAME_QUALITY_MODEL</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="astrodust.DustModel.FILENAME_RF_MODEL"><code class="name">var <span class="ident">FILENAME_RF_MODEL</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="astrodust.DustModel.URL_QUALITY_MODEL"><code class="name">var <span class="ident">URL_QUALITY_MODEL</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt id="astrodust.DustModel.URL_RF_MODEL"><code class="name">var <span class="ident">URL_RF_MODEL</span></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-</dl>
 <h3>Methods</h3>
 <dl>
 <dt id="astrodust.DustModel.predict"><code class="name flex">
@@ -296,15 +287,18 @@ If the models do not exist in the models directory, it will download them from Z
 </code></dt>
 <dd>
 <div class="desc"><p>Makes a prediction from the given set of input parameters. It will also raise warning if the predicted quality is not good.</p>
-<p>r (float): distance from central star
-alpha (float): turblance
-d2g (float): dust to gas ratio
-sigma (float): the surface density of the gas in the model (in g/cm^2)
-tgas (float): temperature of the gas
-t (int): absolute time in seconds
-delta_t (int): time in seconds in the future to predict for
-input_bins (array length 171): 171 length array of dust densities</p>
-<p>Returns (array length 171): 171 length array of the predicted dust densities</p></div>
+<p>Args:<br>
+r (float): distance from central star<br>
+alpha (float): turblance<br>
+d2g (float): dust to gas ratio<br>
+sigma (float): the surface density of the gas in the model (in g/cm^2)<br>
+tgas (float): temperature of the gas<br>
+t (int): absolute time in seconds<br>
+delta_t (int): time in seconds in the future to predict for<br>
+input_bins (array length 171): 171 length array of dust densities
+</p>
+<p>Returns:<br>
+array: 171 length array of the predicted dust densities</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -313,16 +307,18 @@ input_bins (array length 171): 171 length array of dust densities</p>
     &#34;&#34;&#34;
     Makes a prediction from the given set of input parameters. It will also raise warning if the predicted quality is not good.
     
-    r (float): distance from central star
-    alpha (float): turblance
-    d2g (float): dust to gas ratio
-    sigma (float): the surface density of the gas in the model (in g/cm^2)
-    tgas (float): temperature of the gas
-    t (int): absolute time in seconds
-    delta_t (int): time in seconds in the future to predict for
-    input_bins (array length 171): 171 length array of dust densities
+    Args:  
+        r (float): distance from central star  
+        alpha (float): turblance  
+        d2g (float): dust to gas ratio  
+        sigma (float): the surface density of the gas in the model (in g/cm^2)  
+        tgas (float): temperature of the gas  
+        t (int): absolute time in seconds  
+        delta_t (int): time in seconds in the future to predict for  
+        input_bins (array length 171): 171 length array of dust densities  
 
-    Returns (array length 171): 171 length array of the predicted dust densities
+    Returns:  
+        array: 171 length array of the predicted dust densities  
     &#34;&#34;&#34;
 
     # mstar is assumed to be 1
@@ -370,10 +366,6 @@ input_bins (array length 171): 171 length array of dust densities</p>
 <li>
 <h4><code><a title="astrodust.DustModel" href="#astrodust.DustModel">DustModel</a></code></h4>
 <ul class="">
-<li><code><a title="astrodust.DustModel.FILENAME_QUALITY_MODEL" href="#astrodust.DustModel.FILENAME_QUALITY_MODEL">FILENAME_QUALITY_MODEL</a></code></li>
-<li><code><a title="astrodust.DustModel.FILENAME_RF_MODEL" href="#astrodust.DustModel.FILENAME_RF_MODEL">FILENAME_RF_MODEL</a></code></li>
-<li><code><a title="astrodust.DustModel.URL_QUALITY_MODEL" href="#astrodust.DustModel.URL_QUALITY_MODEL">URL_QUALITY_MODEL</a></code></li>
-<li><code><a title="astrodust.DustModel.URL_RF_MODEL" href="#astrodust.DustModel.URL_RF_MODEL">URL_RF_MODEL</a></code></li>
 <li><code><a title="astrodust.DustModel.predict" href="#astrodust.DustModel.predict">predict</a></code></li>
 </ul>
 </li>

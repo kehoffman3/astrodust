@@ -1,1 +1,1 @@
-pdoc --html --output-dir docs/docs astrodust/astrodust.py 
+pdoc --html --output-dir docs/docs astrodust/astrodust.py --force 

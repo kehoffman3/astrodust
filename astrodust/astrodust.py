@@ -8,6 +8,13 @@ import os
 import math
 import warnings
 
+# Ignore class variables in docs
+__pdoc__ = {}
+__pdoc__["DustModel.URL_QUALITY_MODEL"] = False
+__pdoc__["DustModel.URL_RF_MODEL"] = False
+__pdoc__["DustModel.FILENAME_QUALITY_MODEL"] = False
+__pdoc__["DustModel.FILENAME_RF_MODEL"] = False
+
 
 class DustModel:
     """
@@ -22,8 +29,8 @@ class DustModel:
 
     
     def __init__(self):
-        """ Loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
-        If the models do not exist in the models directory, it will download them from Zenodo.
+        """ Init method loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
+        If the models do not exist in the `models` directory, it will prompt to download them from Zenodo.
         """
         self.quality_model = xgb.XGBClassifier()
 
@@ -75,16 +82,18 @@ class DustModel:
         """
         Makes a prediction from the given set of input parameters. It will also raise warning if the predicted quality is not good.
         
-        r (float): distance from central star
-        alpha (float): turblance
-        d2g (float): dust to gas ratio
-        sigma (float): the surface density of the gas in the model (in g/cm^2)
-        tgas (float): temperature of the gas
-        t (int): absolute time in seconds
-        delta_t (int): time in seconds in the future to predict for
-        input_bins (array length 171): 171 length array of dust densities
+        Args:  
+            r (float): distance from central star  
+            alpha (float): turblance  
+            d2g (float): dust to gas ratio  
+            sigma (float): the surface density of the gas in the model (in g/cm^2)  
+            tgas (float): temperature of the gas  
+            t (int): absolute time in seconds  
+            delta_t (int): time in seconds in the future to predict for  
+            input_bins (array length 171): 171 length array of dust densities  
 
-        Returns (array length 171): 171 length array of the predicted dust densities
+        Returns:  
+            array: 171 length array of the predicted dust densities  
         """
 
         # mstar is assumed to be 1
