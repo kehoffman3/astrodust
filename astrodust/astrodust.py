@@ -10,6 +10,9 @@ import warnings
 
 
 class DustModel:
+    """
+    Class for predicting dust densities
+    """
 
     URL_QUALITY_MODEL = "https://zenodo.org/record/4662910/files/prediction-quality.model?download=1"
     URL_RF_MODEL = "https://zenodo.org/record/4662910/files/rf-model-large.joblib?download=1"
@@ -19,7 +22,9 @@ class DustModel:
 
     
     def __init__(self):
-        """ Loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities."""
+        """ Loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
+        If the models do not exist in the models directory, it will download them from Zenodo.
+        """
         self.quality_model = xgb.XGBClassifier()
 
 
@@ -45,7 +50,7 @@ class DustModel:
         except:
             try:
                 download_response = input("The random forest model file was not found in the model directory and must be downloaded (6.6GB). "\
-                "Are you sure you want to download it?\n(Y) for yes or any other key for no.")
+                "Are you sure you want to download it?\n(Y) for yes or any other key to quit.")
                 if download_response.lower() == "y":
                     self._download_file(self.URL_RF_MODEL, self.FILENAME_RF_MODEL)
                 self.model = load(self.FILENAME_RF_MODEL)
@@ -66,12 +71,11 @@ class DustModel:
                         f.write(ch) 
                         pbar.update(len(ch))
 
-    def predict(self, r, mstar, alpha, d2g, sigma, tgas, t, delta_t, input_bins):
+    def predict(self, r: float, alpha: float, d2g: float, sigma: float, tgas: float, t: int, delta_t: int, input_bins:[float]):
         """
-        Makes a prediction from the given set of input parameters. It will also print a warning if the predicted quality is not good.
+        Makes a prediction from the given set of input parameters. It will also raise warning if the predicted quality is not good.
         
         r (float): distance from central star
-        mstar (float): mass of star in the system
         alpha (float): turblance
         d2g (float): dust to gas ratio
         sigma (float): the surface density of the gas in the model (in g/cm^2)
@@ -83,6 +87,8 @@ class DustModel:
         Returns (array length 171): 171 length array of the predicted dust densities
         """
 
+        # mstar is assumed to be 1
+        mstar = 1
 
         input_params = [r, mstar, alpha, d2g, sigma, tgas]
         input_bins_sum = np.sum(input_bins)
