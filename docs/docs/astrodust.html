@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>astrodust API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>astrodust</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import numpy as np
+from joblib import load
+import xgboost as xgb
+from tqdm import *
+import requests
+import sklearn
+import os
+import math
+import warnings
+
+# Ignore class variables in docs
+__pdoc__ = {}
+__pdoc__[&#34;DustModel.URL_QUALITY_MODEL&#34;] = False
+__pdoc__[&#34;DustModel.URL_RF_MODEL&#34;] = False
+__pdoc__[&#34;DustModel.FILENAME_QUALITY_MODEL&#34;] = False
+__pdoc__[&#34;DustModel.FILENAME_RF_MODEL&#34;] = False
+
+
+class DustModel:
+    &#34;&#34;&#34;
+    Class for predicting dust densities
+    &#34;&#34;&#34;
+
+    URL_QUALITY_MODEL = &#34;https://zenodo.org/record/4662910/files/prediction-quality.model?download=1&#34;
+    URL_RF_MODEL = &#34;https://zenodo.org/record/4662910/files/rf-model-large.joblib?download=1&#34;
+
+    FILENAME_QUALITY_MODEL = &#34;models/prediction-quality.model&#34;
+    FILENAME_RF_MODEL = &#34;models/rf-model-large.joblib&#34;
+
+    
+    def __init__(self):
+        &#34;&#34;&#34; Init method loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
+        If the models do not exist in the `models` directory, it will prompt to download them from Zenodo.
+        &#34;&#34;&#34;
+        self.quality_model = xgb.XGBClassifier()
+
+
+        model_dir = &#39;models&#39;
+        # Check if our model folder exists, create it if not
+        if not os.path.exists(model_dir):
+            os.makedirs(model_dir)
+
+        # First try to load the quality model from disk
+        try:
+            self.quality_model.load_model(self.FILENAME_QUALITY_MODEL)
+        except xgb.core.XGBoostError:
+            # Try to download the quality model if the user does not have it
+            try:
+                self._download_file(self.URL_QUALITY_MODEL, self.FILENAME_QUALITY_MODEL)
+                self.quality_model.load_model(self.FILENAME_QUALITY_MODEL)
+            except FileNotFoundError as e:
+                e.strerror = &#34;The model file must exist in the model directory.&#34;
+                raise e
+        # Try to load the random forest model from disk
+        try:
+            self.model = load(self.FILENAME_RF_MODEL)
+        except:
+            try:
+                download_response = input(&#34;The random forest model file was not found in the model directory and must be downloaded (6.6GB). &#34;\
+                &#34;Are you sure you want to download it?\n(Y) for yes or any other key to quit.&#34;)
+                if download_response.lower() == &#34;y&#34;:
+                    self._download_file(self.URL_RF_MODEL, self.FILENAME_RF_MODEL)
+                self.model = load(self.FILENAME_RF_MODEL)
+            except FileNotFoundError as e:
+                e.strerror = &#34;The model file must exist in the model directory.&#34;
+                raise e
+
+    def _download_file(self, url, name):
+        &#34;&#34;&#34; Downloads a given file and writes to disk. Also displays a progress bar. From: https://stackoverflow.com/a/56796119&#34;&#34;&#34;
+        # From https://towardsdatascience.com/how-to-download-files-using-python-part-2-19b95be4cdb5
+        r = requests.get(url, stream=True, allow_redirects=True)
+        total_size = int(r.headers.get(&#39;content-length&#39;))
+        initial_pos = 0
+        with open(name,&#39;wb&#39;) as f: 
+            with tqdm(total=total_size, unit=&#39;B&#39;, unit_scale=True,  desc=name,initial=initial_pos, ascii=True) as pbar:
+                for ch in r.iter_content(chunk_size=(1024 * 128)): # 128KB chunk size                    
+                    if ch:
+                        f.write(ch) 
+                        pbar.update(len(ch))
+
+    def predict(self, r: float, alpha: float, d2g: float, sigma: float, tgas: float, t: int, delta_t: int, input_bins:[float]):
+        &#34;&#34;&#34;
+        Makes a prediction from the given set of input parameters. It will also raise warning if the predicted quality is not good.
+        
+        Args:  
+            r (float): distance from central star  
+            alpha (float): turblance  
+            d2g (float): dust to gas ratio  
+            sigma (float): the surface density of the gas in the model (in g/cm^2)  
+            tgas (float): temperature of the gas  
+            t (int): absolute time in seconds  
+            delta_t (int): time in seconds in the future to predict for  
+            input_bins (array): 171 length array of dust densities for each bin  
+
+        Returns:  
+            array: 171 length array of the predicted dust densities for each bin  
+        &#34;&#34;&#34;
+
+        # mstar is assumed to be 1
+        mstar = 1
+
+        input_params = [r, mstar, alpha, d2g, sigma, tgas]
+        input_bins_sum = np.sum(input_bins)
+        #Normalize the input bins and zero out normalized bins less than 10^-30\n&#34;,
+        normalized_input_bins = []
+        for i in range(len(input_bins)):
+            new_input_bin = np.sum(input_bins[i]) / input_bins_sum
+            if new_input_bin &lt; 1e-30:
+                new_input_bin = 0
+            normalized_input_bins.append(new_input_bin)
+
+        # Input features
+        X = np.concatenate([input_params,normalized_input_bins,[t, delta_t]])
+
+        X_formatted = X.reshape(1, -1)
+        prediction = self.model.predict(X_formatted)
+        
+        # Unnormalize the prediction by multiplying each bin by the input mass
+        prediction *= input_bins_sum
+
+        # Check the quality of the prediction
+        prediction_quality = self.quality_model.predict(X_formatted)
+        if prediction_quality == 0:
+            warnings.warn(&#34;For the given input paramters, the resulting prediction is most likely not accurate.&#34;)
+        return prediction.flatten()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="astrodust.DustModel"><code class="flex name class">
+<span>class <span class="ident">DustModel</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class for predicting dust densities</p>
+<p>Init method loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
+If the models do not exist in the <code>models</code> directory, it will prompt to download them from Zenodo.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DustModel:
+    &#34;&#34;&#34;
+    Class for predicting dust densities
+    &#34;&#34;&#34;
+
+    URL_QUALITY_MODEL = &#34;https://zenodo.org/record/4662910/files/prediction-quality.model?download=1&#34;
+    URL_RF_MODEL = &#34;https://zenodo.org/record/4662910/files/rf-model-large.joblib?download=1&#34;
+
+    FILENAME_QUALITY_MODEL = &#34;models/prediction-quality.model&#34;
+    FILENAME_RF_MODEL = &#34;models/rf-model-large.joblib&#34;
+
+    
+    def __init__(self):
+        &#34;&#34;&#34; Init method loads a random forest model for predicting dust densities and XGBoost model for predicting quality of the predicted dust densities.
+        If the models do not exist in the `models` directory, it will prompt to download them from Zenodo.
+        &#34;&#34;&#34;
+        self.quality_model = xgb.XGBClassifier()
+
+
+        model_dir = &#39;models&#39;
+        # Check if our model folder exists, create it if not
+        if not os.path.exists(model_dir):
+            os.makedirs(model_dir)
+
+        # First try to load the quality model from disk
+        try:
+            self.quality_model.load_model(self.FILENAME_QUALITY_MODEL)
+        except xgb.core.XGBoostError:
+            # Try to download the quality model if the user does not have it
+            try:
+                self._download_file(self.URL_QUALITY_MODEL, self.FILENAME_QUALITY_MODEL)
+                self.quality_model.load_model(self.FILENAME_QUALITY_MODEL)
+            except FileNotFoundError as e:
+                e.strerror = &#34;The model file must exist in the model directory.&#34;
+                raise e
+        # Try to load the random forest model from disk
+        try:
+            self.model = load(self.FILENAME_RF_MODEL)
+        except:
+            try:
+                download_response = input(&#34;The random forest model file was not found in the model directory and must be downloaded (6.6GB). &#34;\
+                &#34;Are you sure you want to download it?\n(Y) for yes or any other key to quit.&#34;)
+                if download_response.lower() == &#34;y&#34;:
+                    self._download_file(self.URL_RF_MODEL, self.FILENAME_RF_MODEL)
+                self.model = load(self.FILENAME_RF_MODEL)
+            except FileNotFoundError as e:
+                e.strerror = &#34;The model file must exist in the model directory.&#34;
+                raise e
+
+    def _download_file(self, url, name):
+        &#34;&#34;&#34; Downloads a given file and writes to disk. Also displays a progress bar. From: https://stackoverflow.com/a/56796119&#34;&#34;&#34;
+        # From https://towardsdatascience.com/how-to-download-files-using-python-part-2-19b95be4cdb5
+        r = requests.get(url, stream=True, allow_redirects=True)
+        total_size = int(r.headers.get(&#39;content-length&#39;))
+        initial_pos = 0
+        with open(name,&#39;wb&#39;) as f: 
+            with tqdm(total=total_size, unit=&#39;B&#39;, unit_scale=True,  desc=name,initial=initial_pos, ascii=True) as pbar:
+                for ch in r.iter_content(chunk_size=(1024 * 128)): # 128KB chunk size                    
+                    if ch:
+                        f.write(ch) 
+                        pbar.update(len(ch))
+
+    def predict(self, r: float, alpha: float, d2g: float, sigma: float, tgas: float, t: int, delta_t: int, input_bins:[float]):
+        &#34;&#34;&#34;
+        Makes a prediction from the given set of input parameters. It will also raise warning if the predicted quality is not good.
+        
+        Args:  
+            r (float): distance from central star  
+            alpha (float): turblance  
+            d2g (float): dust to gas ratio  
+            sigma (float): the surface density of the gas in the model (in g/cm^2)  
+            tgas (float): temperature of the gas  
+            t (int): absolute time in seconds  
+            delta_t (int): time in seconds in the future to predict for  
+            input_bins (array): 171 length array of dust densities for each bin  
+
+        Returns:  
+            array: 171 length array of the predicted dust densities for each bin  
+        &#34;&#34;&#34;
+
+        # mstar is assumed to be 1
+        mstar = 1
+
+        input_params = [r, mstar, alpha, d2g, sigma, tgas]
+        input_bins_sum = np.sum(input_bins)
+        #Normalize the input bins and zero out normalized bins less than 10^-30\n&#34;,
+        normalized_input_bins = []
+        for i in range(len(input_bins)):
+            new_input_bin = np.sum(input_bins[i]) / input_bins_sum
+            if new_input_bin &lt; 1e-30:
+                new_input_bin = 0
+            normalized_input_bins.append(new_input_bin)
+
+        # Input features
+        X = np.concatenate([input_params,normalized_input_bins,[t, delta_t]])
+
+        X_formatted = X.reshape(1, -1)
+        prediction = self.model.predict(X_formatted)
+        
+        # Unnormalize the prediction by multiplying each bin by the input mass
+        prediction *= input_bins_sum
+
+        # Check the quality of the prediction
+        prediction_quality = self.quality_model.predict(X_formatted)
+        if prediction_quality == 0:
+            warnings.warn(&#34;For the given input paramters, the resulting prediction is most likely not accurate.&#34;)
+        return prediction.flatten()</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="astrodust.DustModel.predict"><code class="name flex">
+<span>def <span class="ident">predict</span></span>(<span>self, r: float, alpha: float, d2g: float, sigma: float, tgas: float, t: int, delta_t: int, input_bins: [<class 'float'>])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Makes a prediction from the given set of input parameters. It will also raise warning if the predicted quality is not good.</p>
+<p>Args:<br>
+r (float): distance from central star<br>
+alpha (float): turblance<br>
+d2g (float): dust to gas ratio<br>
+sigma (float): the surface density of the gas in the model (in g/cm^2)<br>
+tgas (float): temperature of the gas<br>
+t (int): absolute time in seconds<br>
+delta_t (int): time in seconds in the future to predict for<br>
+input_bins (array): 171 length array of dust densities for each bin
+</p>
+<p>Returns:<br>
+array: 171 length array of the predicted dust densities for each bin</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def predict(self, r: float, alpha: float, d2g: float, sigma: float, tgas: float, t: int, delta_t: int, input_bins:[float]):
+    &#34;&#34;&#34;
+    Makes a prediction from the given set of input parameters. It will also raise warning if the predicted quality is not good.
+    
+    Args:  
+        r (float): distance from central star  
+        alpha (float): turblance  
+        d2g (float): dust to gas ratio  
+        sigma (float): the surface density of the gas in the model (in g/cm^2)  
+        tgas (float): temperature of the gas  
+        t (int): absolute time in seconds  
+        delta_t (int): time in seconds in the future to predict for  
+        input_bins (array): 171 length array of dust densities for each bin  
+
+    Returns:  
+        array: 171 length array of the predicted dust densities for each bin  
+    &#34;&#34;&#34;
+
+    # mstar is assumed to be 1
+    mstar = 1
+
+    input_params = [r, mstar, alpha, d2g, sigma, tgas]
+    input_bins_sum = np.sum(input_bins)
+    #Normalize the input bins and zero out normalized bins less than 10^-30\n&#34;,
+    normalized_input_bins = []
+    for i in range(len(input_bins)):
+        new_input_bin = np.sum(input_bins[i]) / input_bins_sum
+        if new_input_bin &lt; 1e-30:
+            new_input_bin = 0
+        normalized_input_bins.append(new_input_bin)
+
+    # Input features
+    X = np.concatenate([input_params,normalized_input_bins,[t, delta_t]])
+
+    X_formatted = X.reshape(1, -1)
+    prediction = self.model.predict(X_formatted)
+    
+    # Unnormalize the prediction by multiplying each bin by the input mass
+    prediction *= input_bins_sum
+
+    # Check the quality of the prediction
+    prediction_quality = self.quality_model.predict(X_formatted)
+    if prediction_quality == 0:
+        warnings.warn(&#34;For the given input paramters, the resulting prediction is most likely not accurate.&#34;)
+    return prediction.flatten()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="astrodust.DustModel" href="#astrodust.DustModel">DustModel</a></code></h4>
+<ul class="">
+<li><code><a title="astrodust.DustModel.predict" href="#astrodust.DustModel.predict">predict</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
