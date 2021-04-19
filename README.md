@@ -1,6 +1,6 @@
 # Astrodust
 
-A package for predicting the distribution of dust particles in protoplanetary disk based of our paper here (**TODO**).
+A package for predicting the distribution of dust particles in protoplanetary disk based off our paper "Multi-Output Random Forest Regression to Emulatethe Earliest Stages of Planet Formation".
 
 ## Installation
 
@@ -14,7 +14,7 @@ The package requires two pretrained models, a random forest regression model and
 
 ## Documentation
 
-The documentation for the package is located [here](https://kehoffman3.github.io/astrodust/docs/astrodust.html). A demo notebook is also available here (**TODO**).
+The documentation for the package is located [here](https://kehoffman3.github.io/astrodust/docs/astrodust.html). A demo notebook is also [available](https://github.com/kehoffman3/astrodust/blob/master/demo/demo.ipynb).
 
-Particle sizes for each bin for the input and output can be viewed here (**TODO**).
+Particle sizes for each bin for the input and output are included as a reference here (**TODO**).
 
