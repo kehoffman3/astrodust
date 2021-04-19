@@ -4,7 +4,7 @@ A package for predicting the distribution of dust particles in protoplanetary di
 
 ## Installation
 
-Astrodust can be installed from PyP via pip: 
+Astrodust can be installed from PyPI via pip: 
 
 `pip install astrodust`
 
