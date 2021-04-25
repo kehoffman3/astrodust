@@ -114,6 +114,9 @@ class DustModel:
 
         X_formatted = X.reshape(1, -1)
         prediction = self.model.predict(X_formatted)
+
+        # Make sure prediction sums to 1 to conserve mass
+        prediction /= prediction.sum(axis=1,keepdims=1)
         
         # Unnormalize the prediction by multiplying each bin by the input mass
         prediction *= input_bins_sum
