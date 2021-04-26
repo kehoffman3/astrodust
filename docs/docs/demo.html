@@ -14315,13 +14315,13 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<p>Note that as of v.1.0.2 of <code>astrodust</code>, <code>mstar</code> (the mass of the central star) is not included, since in our training, we always had a stellar mass of 1. Future versions of the package may include this as a parameter if we train on variable stellar masses.</p>
+<p>Note that as of v.1.0.0 of <code>astrodust</code>, <code>mstar</code> (the mass of the central star) is not included, since in our training, we always had a stellar mass of 1. Future versions of the package may include this as a parameter if we train on variable stellar masses.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="User-Story-1">User Story 1<a class="anchor-link" href="#User-Story-1">&#182;</a></h2><p>As a an astronomy researcher, I want to be able to install and import this package, and make a simple prediction about the evolution of dust particles in a protoplanetary disk.</p>
+<h2 id="Use-Case-1">Use Case 1<a class="anchor-link" href="#Use-Case-1">&#182;</a></h2><p>Let's take a look at how to install and import this package, and make a simple prediction about the evolution of dust particles in a protoplanetary disk.</p>
 
 </div>
 </div>
@@ -14336,7 +14336,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install --index-url https://test.pypi.org/simple/ astrodust --upgrade
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install astrodust --upgrade
 </pre></div>
 
      </div>
@@ -14356,15 +14356,14 @@ a.anchor-link {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Looking in indexes: https://test.pypi.org/simple/
-Requirement already up-to-date: astrodust in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (1.0.2)
+<pre>Requirement already up-to-date: astrodust in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (1.0.2)
+Requirement already satisfied, skipping upgrade: xgboost&gt;=1.2 in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (from astrodust) (1.3.3)
 Requirement already satisfied, skipping upgrade: scikit-learn&gt;=0.24.0 in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (from astrodust) (0.24.1)
 Requirement already satisfied, skipping upgrade: joblib&gt;=1.0 in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (from astrodust) (1.0.1)
-Requirement already satisfied, skipping upgrade: xgboost&gt;=1.2 in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (from astrodust) (1.3.3)
 Requirement already satisfied, skipping upgrade: tqdm&gt;=4.50 in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (from astrodust) (4.50.2)
+Requirement already satisfied, skipping upgrade: numpy in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (from xgboost&gt;=1.2-&gt;astrodust) (1.19.2)
+Requirement already satisfied, skipping upgrade: scipy in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (from xgboost&gt;=1.2-&gt;astrodust) (1.5.2)
 Requirement already satisfied, skipping upgrade: threadpoolctl&gt;=2.0.0 in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn&gt;=0.24.0-&gt;astrodust) (2.1.0)
-Requirement already satisfied, skipping upgrade: numpy&gt;=1.13.3 in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn&gt;=0.24.0-&gt;astrodust) (1.19.2)
-Requirement already satisfied, skipping upgrade: scipy&gt;=0.19.1 in /Users/andrezazz/opt/anaconda3/lib/python3.8/site-packages (from scikit-learn&gt;=0.24.0-&gt;astrodust) (1.5.2)
 </pre>
 </div>
 </div>
@@ -14581,7 +14580,7 @@ Requirement already satisfied, skipping upgrade: scipy&gt;=0.19.1 in /Users/andr
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="User-Story-2">User Story 2<a class="anchor-link" href="#User-Story-2">&#182;</a></h2><p>As an astronomer, I want to be able to make a prediction about dust evolution, and know if the prediction is confident or not.</p>
+<h2 id="Use-Case-2">Use Case 2<a class="anchor-link" href="#Use-Case-2">&#182;</a></h2><p>We also want to be able to make a prediction about dust evolution, and know if the prediction is confident or not.</p>
 
 </div>
 </div>
