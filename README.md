@@ -1,6 +1,6 @@
 # Astrodust
 
-A package for predicting the distribution of dust particles in protoplanetary disk based off our paper [Multi-Output Random Forest Regression to Emulatethe Earliest Stages of Planet Formation](https://arxiv.org/abs/2104.12845) by André Zazzera, Kevin Hoffman, and Jae Yoon Sung. Our work for this capstone project can be found in this [repository](https://github.com/andrezazz/dust-in-the-machine).
+A package for predicting the distribution of dust particles in protoplanetary disk based off our paper [Multi-Output Random Forest Regression to Emulatethe Earliest Stages of Planet Formation](https://arxiv.org/abs/2104.12845) by André Zazzera, Kevin Hoffman, and Jae Sung. Our work for this capstone project can be found in this [repository](https://github.com/andrezazz/dust-in-the-machine).
 
 ## Installation
 
